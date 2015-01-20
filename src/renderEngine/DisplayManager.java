@@ -20,6 +20,8 @@ public class DisplayManager {
 		try {
 		Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
 		Display.create(new PixelFormat(), attribs);
+		Display.setTitle("Galactic Empires");
+		
 		} catch (LWJGLException e){
 			e.printStackTrace();
 		}
