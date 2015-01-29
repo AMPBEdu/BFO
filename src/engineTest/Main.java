@@ -3,7 +3,9 @@ package engineTest;
 import org.lwjgl.opengl.Display;
 
 import Models.RawModel;
+import Models.TexturedModel;
 import Shaders.StaticShader;
+import Textures.ModelTexture;
 import renderEngine.DisplayManager;
 import renderEngine.Loader;
 import renderEngine.Renderer;
@@ -20,17 +22,26 @@ public class Main {
 		StaticShader shader = new StaticShader();
 		
 		float[] vertices = {
-			// Bottom Left
-				-0.5f,  0.5f, 0f,
-				-0.5f, -0.5f, 0f,
-				 0.5f, -0.5f, 0f,
-			 //Top Right
-				 0.5f, -0.5f, 0f,
-				 0.5f, 0.5f,  0f,
-				-0.5f, 0.5f, 0f
+			-0.5f,  0.5f, 0,
+			-0.5f, -0.5f, 0,
+			 0.5f, -0.5f, 0,
+			 0.5f,  0.5f, 0
 		};
 		
-		RawModel model = loader.loadToVAO(vertices);
+		int[] indices = {
+				0,1,3,
+				3,1,2
+		};
+		
+		float[] textureCoords = {
+			0,0,
+			0,1,
+			1,1,
+			1,0
+		};
+		RawModel model = loader.loadToVAO(vertices, textureCoords, indices);
+		ModelTexture texture = new ModelTexture(loader.loadTexture("AnonTexture"));
+		TexturedModel texturedModel = new TexturedModel(model,texture);
 		
 		while(!Display.isCloseRequested()) {
 			renderer.prepare();
@@ -38,7 +49,7 @@ public class Main {
 			//render
 			renderer.prepare();
 			shader.start();
-			renderer.render(model);
+			renderer.render(texturedModel);
 			shader.stop();
 			DisplayManager.updateDisplay();
 		}
