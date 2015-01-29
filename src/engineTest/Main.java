@@ -2,6 +2,7 @@ package engineTest;
 
 import org.lwjgl.opengl.Display;
 
+import Shaders.StaticShader;
 import renderEngine.DisplayManager;
 import renderEngine.Loader;
 import renderEngine.RawModel;
@@ -15,6 +16,8 @@ public class Main {
 		
 		Loader loader = new Loader();
 		Renderer renderer = new Renderer();
+		
+		StaticShader shader = new StaticShader();
 		
 		float[] vertices = {
 			// Bottom Left
@@ -33,12 +36,16 @@ public class Main {
 			renderer.prepare();
 			//game logic
 			//render
+			renderer.prepare();
+			shader.start();
 			renderer.render(model);
+			shader.stop();
 			DisplayManager.updateDisplay();
 		}
 		
+		shader.cleanUp();
+		loader.cleanUP();
 		DisplayManager.closeDisplay();
-		
 	}
 	
 }
