@@ -30,6 +30,11 @@ public class Entity {
 		this.position.z+=dz;
 	}
 	
+	public void increaseRotation(float dx, float dy, float dz){
+		this.rotX += dx;
+		this.rotY += dy;
+		this.rotZ += dz;
+	}
 
 	public TexturedModel getModel() {
 		return model;
