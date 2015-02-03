@@ -1,7 +1,9 @@
 package engineTest;
 
 import org.lwjgl.opengl.Display;
+import org.lwjgl.util.vector.Vector3f;
 
+import Entities.Entity;
 import Models.RawModel;
 import Models.TexturedModel;
 import Shaders.StaticShader;
@@ -40,16 +42,17 @@ public class Main {
 			1,0
 		};
 		RawModel model = loader.loadToVAO(vertices, textureCoords, indices);
-		ModelTexture texture = new ModelTexture(loader.loadTexture("AnonTexture"));
-		TexturedModel texturedModel = new TexturedModel(model,texture);
+		TexturedModel staticModel = new TexturedModel(model, new ModelTexture(loader.loadTexture("spray2")));
+		Entity entity = new Entity(staticModel, new Vector3f(-1,0,0),0,0,0,1);
 		
 		while(!Display.isCloseRequested()) {
-			renderer.prepare();
-			//game logic
-			//render
+			// Game logic
+			entity.increasePosition(0.002f, 0, 0);
+			entity.increaseRotation(0, 1, 0);
+			//Render
 			renderer.prepare();
 			shader.start();
-			renderer.render(texturedModel);
+			renderer.render(entity,shader);
 			shader.stop();
 			DisplayManager.updateDisplay();
 		}

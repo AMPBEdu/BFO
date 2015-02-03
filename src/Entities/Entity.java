@@ -13,9 +13,8 @@ public class Entity {
 	
 	
 
-	public Entity(TexturedModel model, Vector3f position, float rotX,
-			float rotY, float rotZ, float scale) {
-		super();
+	public Entity(TexturedModel model, Vector3f position,
+			float rotX, float rotY, float rotZ, float scale) {
 		this.model = model;
 		this.position = position;
 		this.rotX = rotX;
@@ -25,15 +24,16 @@ public class Entity {
 	}
 	
 	public void increasePosition(float dx, float dy, float dz){
-		this.position.x+=dx;
-		this.position.y+=dy;
-		this.position.z+=dz;
+		this.position.x += dx;
+		this.position.y += dy;
+		this.position.z += dz;
 	}
 	
 	public void increaseRotation(float dx, float dy, float dz){
 		this.rotX += dx;
 		this.rotY += dy;
 		this.rotZ += dz;
+		System.out.println("Rot: " + this.rotX);
 	}
 
 	public TexturedModel getModel() {

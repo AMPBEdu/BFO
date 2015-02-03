@@ -20,16 +20,19 @@ public class Renderer {
 	}
 	
 	public void render(Entity entity, StaticShader shader){
-		TexturedModel model = entity.getModel();
+		TexturedModel model  = entity.getModel();
 		RawModel rawModel = model.getRawModel();
 		GL30.glBindVertexArray(rawModel.getVaoID());
 		enableVAO();
+		
 		Matrix4f transformationMatrix = Maths.createTransformationMatrix(
-				entity.getPosition(), entity.getRotX(), entity.getRotZ(), entity.getScale());
+				entity.getPosition(), entity.getRotX(), entity.getRotY(), entity.getRotZ(), entity.getScale());
 		shader.loadTransformationMatrix(transformationMatrix);
+		
 		GL13.glActiveTexture(GL13.GL_TEXTURE0);
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, model.getTexture().getID());
 		GL11.glDrawElements(GL11.GL_TRIANGLES, rawModel.getVertexCount(), GL11.GL_UNSIGNED_INT, 0);
+		
 		disableVAO();
 		GL30.glBindVertexArray(0);
 	}
