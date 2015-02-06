@@ -11,24 +11,24 @@ public class Camera {
 	
 	public Camera(){}
 	
-	public void move(){
+	public void move(double speed){
 		if(Keyboard.isKeyDown(Keyboard.KEY_W)){
-			position.z-=0.02f;
+			position.z-=speed;
 		}
 		if(Keyboard.isKeyDown(Keyboard.KEY_S)){
-			position.z+=0.02f;
+			position.z+=speed;
 		}
 		if(Keyboard.isKeyDown(Keyboard.KEY_D)){
-			position.x+=0.02f;
+			position.x+=speed;
 		}
 		if(Keyboard.isKeyDown(Keyboard.KEY_A)){
-			position.x-=0.02f;
+			position.x-=speed;
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_UP)){
-			position.y+=0.02f;
+		if(Keyboard.isKeyDown(Keyboard.KEY_Q)){
+			position.y-=speed;
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_DOWN)){
-			position.y-=0.02f;
+		if(Keyboard.isKeyDown(Keyboard.KEY_E)){
+			position.y+=speed;
 		}
 	}
 	
