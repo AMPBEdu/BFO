@@ -11,7 +11,11 @@ public class Camera {
 	
 	public Camera(){}
 	
-	public void move(double speed){
+	// Camera Movement
+	public void updatePosition(double speed){
+		//Mouse
+		
+		//Keyboard
 		if(Keyboard.isKeyDown(Keyboard.KEY_W)){
 			position.z-=speed;
 		}
@@ -30,6 +34,14 @@ public class Camera {
 		if(Keyboard.isKeyDown(Keyboard.KEY_E)){
 			position.y+=speed;
 		}
+	}
+	// Getters and Setters
+	public void yaw(float amt){
+		yaw+=amt;
+	}
+	
+	public void pitch(float amt){
+		pitch+=amt;
 	}
 	
 	public Vector3f getPosition() {

@@ -81,7 +81,6 @@ public class OBJLoader {
 			reader.close();
 			
 		}catch(Exception e){
-			System.out.println("Something is wrong here");
 			e.printStackTrace();
 		}
 		

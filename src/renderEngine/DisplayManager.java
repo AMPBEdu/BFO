@@ -9,8 +9,8 @@ import org.lwjgl.opengl.PixelFormat;
 
 public class DisplayManager {
 	
-	private static final int WIDTH = 1280;
-	private static final int HEIGHT = 720;
+	private static final int WIDTH = 1080;
+	private static final int HEIGHT = 620;
 	private static final int FPS_CAP = 60;
 	
 	public static void createDisplay(){
@@ -22,7 +22,7 @@ public class DisplayManager {
 		try {
 		Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
 		Display.create(new PixelFormat(), attribs);
-		Display.setTitle("Galactic Empires");
+		Display.setTitle("Engine Tester");
 		
 		} catch (LWJGLException e){
 			e.printStackTrace();
