@@ -1,49 +1,86 @@
-package Entities;
+package entities;
 
-import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector3f;
 
+import toolBox.Input;
+
 public class Camera {
-	private Vector3f position = new Vector3f(0,0,0);
+	private Vector3f position;
 	private float pitch;
 	private float yaw;
 	private float roll;
 	
-	public Camera(){}
+	float dx = 0.0f;
+	float dy = 0.0f;
+	float dt = 0.0f;
+	float lastTime = 0.0f;
+	float time = 0.0f;
+
+	float mouseSensitivity = 0.08f;
+	float movementSpeed = 10.0f; //move 10 units per second
+	
+	public Camera(Vector3f position){
+		this.position = position;
+	}
 	
 	// Camera Movement
-	public void updatePosition(double speed){
-		//Mouse
-		
+	public void updatePosition(float speed, boolean enableFPS){
+		if(enableFPS){
+			dx = Mouse.getDX();
+	        dy = Mouse.getDY();
+	        yaw(dx * mouseSensitivity);
+	        pitch(-dy * mouseSensitivity);
+		}
 		//Keyboard
-		if(Keyboard.isKeyDown(Keyboard.KEY_W)){
-			position.z-=speed;
+		if(Input.GetKey(Input.KEY_W)){
+			moveForward(speed);
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_S)){
-			position.z+=speed;
+		if(Input.GetKey(Input.KEY_S)){
+			moveBackward(speed);
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_D)){
-			position.x+=speed;
+		if(Input.GetKey(Input.KEY_D)){
+			moveRight(speed);
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_A)){
-			position.x-=speed;
+		if(Input.GetKey(Input.KEY_A)){
+			moveLeft(speed);
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_Q)){
+		if(Input.GetKey(Input.KEY_Q)){
 			position.y-=speed;
 		}
-		if(Keyboard.isKeyDown(Keyboard.KEY_E)){
+		if(Input.GetKey(Input.KEY_E)){
 			position.y+=speed;
 		}
 	}
+	public void yaw(float amount){
+	yaw += amount;
+	}
+	public void pitch(float amount){
+	pitch += amount;
+	}
+	//Movement
+	public void moveForward(float distance)
+	{
+	    position.x += distance * (float)Math.sin(Math.toRadians(yaw));
+	    position.z -= distance * (float)Math.cos(Math.toRadians(yaw));
+	}
+	public void moveBackward(float distance)
+	{
+	    position.x -= distance * (float)Math.sin(Math.toRadians(yaw));
+	    position.z += distance * (float)Math.cos(Math.toRadians(yaw));
+	}
+	public void moveLeft(float distance)
+	{
+	    position.x += distance * (float)Math.sin(Math.toRadians(yaw-90));
+	    position.z -= distance * (float)Math.cos(Math.toRadians(yaw-90));
+	}
+	public void moveRight(float distance)
+	{
+	    position.x += distance * (float)Math.sin(Math.toRadians(yaw+90));
+	    position.z -= distance * (float)Math.cos(Math.toRadians(yaw+90));
+	}
+	
 	// Getters and Setters
-	public void yaw(float amt){
-		yaw+=amt;
-	}
-	
-	public void pitch(float amt){
-		pitch+=amt;
-	}
-	
 	public Vector3f getPosition() {
 		return position;
 	}
@@ -59,6 +96,4 @@ public class Camera {
 	public float getRoll() {
 		return roll;
 	}
-	
-	
 }

@@ -1,4 +1,4 @@
-package Loaders;
+package loaders;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,10 +7,10 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import models.RawModel;
+
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
-
-import Models.RawModel;
 
 public class OBJLoader {
 	
@@ -98,7 +98,7 @@ public class OBJLoader {
 			indicesArray[i] = indices.get(i);
 		}
 		
-		return loader.loadToVAO(verticesArray, textureArray, indicesArray);
+		return loader.loadToVAO(verticesArray, textureArray, normalsArray, indicesArray);
 	}
 	
 	private static void processVertex(String[] vertexData, List<Integer> indices,
