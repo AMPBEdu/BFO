@@ -74,7 +74,13 @@ public class MasterRenderer {
 			entities.put(entityModel, newBatch);
 		}
 	}
-	
+	public void processEntities(List<Entity> entityList){
+		for(Entity entity:entityList){
+			int i = 0;
+			processEntity(entityList.get(i));
+			i++;
+		}
+	}
 	public void prepare(){
 		GL11.glEnable(GL11.GL_DEPTH_TEST);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT|GL11.GL_DEPTH_BUFFER_BIT);

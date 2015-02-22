@@ -14,22 +14,22 @@ public class Light {
 		this.colour = colour;
 	}
 	public void updatePosition(double speed){
-		if(Input.GetKey(Input.KEY_I)){
+		if(Input.getKey(Input.KEY_I)){
 			position.z-=speed;
 		}
-		if(Input.GetKey(Input.KEY_K)){
+		if(Input.getKey(Input.KEY_K)){
 			position.z+=speed;
 		}
-		if(Input.GetKey(Input.KEY_L)){
+		if(Input.getKey(Input.KEY_L)){
 			position.x+=speed;
 		}
-		if(Input.GetKey(Input.KEY_J)){
+		if(Input.getKey(Input.KEY_J)){
 			position.x-=speed;
 		}
-		if(Input.GetKey(Input.KEY_U)){
+		if(Input.getKey(Input.KEY_U)){
 			position.y-=speed;
 		}
-		if(Input.GetKey(Input.KEY_O)){
+		if(Input.getKey(Input.KEY_O)){
 			position.y+=speed;
 		}
 	}

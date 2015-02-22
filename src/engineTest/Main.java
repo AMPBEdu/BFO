@@ -16,6 +16,7 @@ import textures.ModelTexture;
 import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 import toolBox.Input;
+import toolBox.KeyboardInput;
 import entities.Camera;
 import entities.Entity;
 import entities.Light;
@@ -27,6 +28,7 @@ public class Main {
 		
 		DisplayManager.createDisplay();
 		Loader loader = new Loader();
+		KeyboardInput keyIn = new KeyboardInput();
 		//******************Terrain Stuff*******************
 				TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassTexture"));
 				TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
@@ -60,24 +62,17 @@ public class Main {
 		
 		Terrain terrain = new Terrain(0,-1,loader, texturePack, blendMap);
 		
-		Camera camera = new Camera(new Vector3f(100,5,-150));
+		Camera camera = new Camera();
 		//Light playerLight = new Light(camera.getPosition(), new Vector3f(1,1,1));
 		MasterRenderer renderer = new MasterRenderer();
 		
 		Mouse.setGrabbed(true);
-		while(!Display.isCloseRequested() && !Input.GetKeyUp(Input.KEY_F4)) {
-			
-			//entity.increasePosition(0, 0, -0.05f);
-			if(Input.GetKeyDown(Input.KEY_ESCAPE)){
-				escMenu = !escMenu;
-				Mouse.setGrabbed(!escMenu);
-			}
-			
-			camera.updatePosition(0.2f, !escMenu);
+		while(!Display.isCloseRequested() && !Input.getKeyUp(Input.KEY_F4)) {
+			Input.Update();	
+			camera.updatePosition();
 			//playerLight.setPosition(camera.getPosition());
 			light.updatePosition(0.1f);
 			sphereEntity.setPosition(light.getPosition());
-			Input.Update();
 			//dragon.increaseRotation(0, 1, 0);
 			//Render
 			renderer.processTerrain(terrain);

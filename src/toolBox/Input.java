@@ -130,7 +130,7 @@ public class Input
 	public static final int KEY_DOWN            = 0xD0; /* DownArrow on arrow keypad */
 	public static final int KEY_NEXT            = 0xD1; /* PgDn on arrow keypad */
 	public static final int KEY_INSERT          = 0xD2; /* Insert on arrow keypad */
-	public static final int KEY_DELETE          = 0xD3; /* Delete on arrow keypad */
+	public static final int KEY_DELETE          = 0xD3; 	 /* Delete on arrow keypad */
 	public static final int KEY_LMETA           = 0xDB; /* Left Windows/Option key */
 	public static final int KEY_LWIN            = KEY_LMETA; /* Left Windows key */
 	public static final int KEY_RMETA           = 0xDC; /* Right Windows/Option key */
@@ -139,59 +139,82 @@ public class Input
 	public static final int KEY_POWER           = 0xDE;
 	public static final int KEY_SLEEP           = 0xDF;
 	
+	private static int lastKey = KEY_NONE;
 	private static boolean[] m_lastKeys = new boolean[NUM_KEYCODES];
 	private static boolean[] m_lastMouse = new boolean[NUM_MOUSEBUTTONS];
 	
+	static KeyboardInput keyIn = new KeyboardInput();
+	
 	public static void Update()
 	{
-		for(int i = 0; i < NUM_KEYCODES; i++)
-			m_lastKeys[i] = GetKey(i);
-		
-		for(int i = 0; i < NUM_MOUSEBUTTONS; i++)
-			m_lastMouse[i] = GetMouse(i);
+		for(int i = 0; i < NUM_KEYCODES; i++){
+			if(getKeyDown(i)){
+				lastKey = i;
+			}
+		}
+		keyIn.updateInput();
+		for(int i = 0; i < NUM_KEYCODES; i++){
+			m_lastKeys[i] = getKey(i);
+		}
+		for(int i = 0; i < NUM_MOUSEBUTTONS; i++){
+			m_lastMouse[i] = getMouse(i);
+		}
 	}
 	
-	public static boolean GetKey(int keyCode)
+	public static boolean getKey(int keyCode)
 	{
 		return Keyboard.isKeyDown(keyCode);
 	}
 	
-	public static boolean GetKeyDown(int keyCode)
+	public static boolean getKeyDown(int keyCode)
 	{
-		return GetKey(keyCode) && !m_lastKeys[keyCode];
+		return getKey(keyCode) && !m_lastKeys[keyCode];
 	}
 	
-	public static boolean GetKeyUp(int keyCode)
+	public static int getLastKeyDown(){
+		return lastKey;
+	}
+	public static int getCurrentKeyDown(){
+		int nextKey = KEY_NONE;
+		for(int i = 0; i < NUM_KEYCODES; i++){
+			if(getKeyDown(i)){
+				nextKey = i;
+			}
+		}
+		return nextKey;
+	}
+	public static boolean getKeyUp(int keyCode)
 	{
-		return !GetKey(keyCode) && m_lastKeys[keyCode];
+		return !getKey(keyCode) && m_lastKeys[keyCode];
 	}
 	
-	public static boolean GetMouse(int mouseButton)
+	
+	public static boolean getMouse(int mouseButton)
 	{
 		return Mouse.isButtonDown(mouseButton);
 	}
 	
-	public static boolean GetMouseDown(int mouseButton)
+	public static boolean getMouseDown(int mouseButton)
 	{
-		return GetMouse(mouseButton) && !m_lastMouse[mouseButton];
+		return getMouse(mouseButton) && !m_lastMouse[mouseButton];
 	}
 	
-	public static boolean GetMouseUp(int mouseButton)
+	public static boolean getMouseUp(int mouseButton)
 	{
-		return !GetMouse(mouseButton) && m_lastMouse[mouseButton];
+		return !getMouse(mouseButton) && m_lastMouse[mouseButton];
 	}
 	
-	public static Vector2f GetMousePosition()
+	public static Vector2f getMousePosition()
 	{
 		return new Vector2f(Mouse.getX(), Mouse.getY());
 	}
 	
-	public static void SetMousePosition(Vector2f pos)
+	public static void setMousePosition(Vector2f pos)
 	{
 		Mouse.setCursorPosition((int)pos.getX(), (int)pos.getY());
 	}
 	
-	public static void SetCursor(boolean enabled)
+	public static void setGrabbed(boolean enabled)
 	{
 		Mouse.setGrabbed(!enabled);
 	}
