@@ -3,17 +3,18 @@ package entities;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector3f;
 
-import toolBox.Input;
-import toolBox.KeyboardInput;
+import toolBox.KeyIn;
+import toolBox.Time;
 
 public class Camera {
-	KeyboardInput keyIn = new KeyboardInput();
 	
 	private static Vector3f position = new Vector3f(100,5,-150);
 	private float pitch;
 	private static float yaw;
 	private float roll;
-	private static float speed = 0.2f;
+	private static final float walkSpeed = 15;
+	private static final float sprintSpeed = 25; 
+	private static float movement;
 	
 	float dx = 0.0f;
 	float dy = 0.0f;
@@ -27,11 +28,16 @@ public class Camera {
 	
 	// Camera Movement
 	public void updatePosition(){
-		if(!keyIn.escMenu){
+		if(!KeyIn.isEscMenu()){
 			dx = Mouse.getDX();
 	        dy = Mouse.getDY();
 	        yaw(dx * mouseSensitivity);
 	        pitch(-dy * mouseSensitivity);
+		}
+		if(KeyIn.isSprinting()){
+			movement = sprintSpeed * Time.getDelta();
+		}else{
+			movement = walkSpeed * Time.getDelta();
 		}
 	}
 	public void yaw(float amount){
@@ -43,29 +49,29 @@ public class Camera {
 	//Movement
 	public static void moveForward()
 	{
-	    position.x += speed * (float)Math.sin(Math.toRadians(yaw));
-	    position.z -= speed * (float)Math.cos(Math.toRadians(yaw));
+	    position.x += movement * (float)Math.sin(Math.toRadians(yaw));
+	    position.z -= movement * (float)Math.cos(Math.toRadians(yaw));
 	}
 	public static void moveBackward()
 	{
-	    position.x -= speed * (float)Math.sin(Math.toRadians(yaw));
-	    position.z += speed * (float)Math.cos(Math.toRadians(yaw));
+	    position.x -= movement * (float)Math.sin(Math.toRadians(yaw));
+	    position.z += movement * (float)Math.cos(Math.toRadians(yaw));
 	}
 	public static void moveLeft()
 	{
-	    position.x += speed * (float)Math.sin(Math.toRadians(yaw-90));
-	    position.z -= speed * (float)Math.cos(Math.toRadians(yaw-90));
+	    position.x += movement * (float)Math.sin(Math.toRadians(yaw-90));
+	    position.z -= movement * (float)Math.cos(Math.toRadians(yaw-90));
 	}
 	public static void moveRight()
 	{
-	    position.x += speed * (float)Math.sin(Math.toRadians(yaw+90));
-	    position.z -= speed * (float)Math.cos(Math.toRadians(yaw+90));
+	    position.x += movement * (float)Math.sin(Math.toRadians(yaw+90));
+	    position.z -= movement * (float)Math.cos(Math.toRadians(yaw+90));
 	}
 	public static void moveUp(){
-		position.y += speed;
+		position.y += movement;
 	}
 	public static void moveDown(){
-		position.y -= speed;
+		position.y -= movement;
 	}
 	
 	// Getters and Setters
@@ -83,9 +89,5 @@ public class Camera {
 
 	public float getRoll() {
 		return roll;
-	}
-	
-	public static void setSpeed(float moveSpeed) {
-		speed = moveSpeed;
 	}
 }

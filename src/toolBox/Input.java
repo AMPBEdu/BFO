@@ -143,7 +143,7 @@ public class Input
 	private static boolean[] m_lastKeys = new boolean[NUM_KEYCODES];
 	private static boolean[] m_lastMouse = new boolean[NUM_MOUSEBUTTONS];
 	
-	static KeyboardInput keyIn = new KeyboardInput();
+	static KeyIn keyIn = new KeyIn();
 	
 	public static void Update()
 	{
@@ -152,7 +152,9 @@ public class Input
 				lastKey = i;
 			}
 		}
+		
 		keyIn.updateInput();
+		
 		for(int i = 0; i < NUM_KEYCODES; i++){
 			m_lastKeys[i] = getKey(i);
 		}

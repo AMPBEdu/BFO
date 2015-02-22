@@ -16,7 +16,8 @@ import textures.ModelTexture;
 import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 import toolBox.Input;
-import toolBox.KeyboardInput;
+import toolBox.KeyIn;
+import toolBox.Time;
 import entities.Camera;
 import entities.Entity;
 import entities.Light;
@@ -24,11 +25,9 @@ import entities.Light;
 public class Main {
 	
 	public static void main(String[] args){
-		boolean escMenu = false;
 		
 		DisplayManager.createDisplay();
 		Loader loader = new Loader();
-		KeyboardInput keyIn = new KeyboardInput();
 		//******************Terrain Stuff*******************
 				TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassTexture"));
 				TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
@@ -68,7 +67,8 @@ public class Main {
 		
 		Mouse.setGrabbed(true);
 		while(!Display.isCloseRequested() && !Input.getKeyUp(Input.KEY_F4)) {
-			Input.Update();	
+			Time.Update();
+			Input.Update();
 			camera.updatePosition();
 			//playerLight.setPosition(camera.getPosition());
 			light.updatePosition(0.1f);

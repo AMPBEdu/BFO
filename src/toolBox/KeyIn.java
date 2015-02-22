@@ -4,9 +4,9 @@ import org.lwjgl.input.Mouse;
 
 import entities.Camera;
 
-public class KeyboardInput {
-	public static boolean escMenu   = false;
-	public static boolean sprinting = false;
+public class KeyIn {
+	private static boolean escMenu   = false;
+	private static boolean sprinting = false;
 	public void updateInput(){
 		menuEvent();
 		if(!escMenu){
@@ -43,10 +43,14 @@ public class KeyboardInput {
 	private void sprintEvent(){
 		if(Input.getKeyDown(Input.KEY_LSHIFT)){
 			sprinting = true;
-			Camera.setSpeed(0.4f);
 		}else if(Input.getKeyUp(Input.KEY_LSHIFT)){
 			sprinting = false;
-			Camera.setSpeed(0.2f);
 		}
+	}
+	public static boolean isEscMenu() {
+		return escMenu;
+	}
+	public static boolean isSprinting() {
+		return sprinting;
 	}
 }

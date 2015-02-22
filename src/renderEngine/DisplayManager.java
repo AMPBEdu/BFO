@@ -7,6 +7,8 @@ import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.PixelFormat;
 
+import toolBox.Time;
+
 public class DisplayManager {
 	
 	private static final int WIDTH = 1080;

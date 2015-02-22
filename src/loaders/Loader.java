@@ -48,6 +48,7 @@ public class Loader {
 		return textureID;
 	}
 	
+	
 	public void cleanUp(){
 		for(int vao:vaos){
 			GL30.glDeleteVertexArrays(vao);
