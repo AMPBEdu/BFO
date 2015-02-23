@@ -48,6 +48,17 @@ public class Loader {
 		return textureID;
 	}
 	
+	public Texture loadTextureSheet(String textureName, String fileName){
+		Texture texture = null;
+		try {
+			texture = TextureLoader.getTexture("PNG", new FileInputStream("res/Textures/" + fileName + ".png"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return texture;
+	}
 	
 	public void cleanUp(){
 		for(int vao:vaos){

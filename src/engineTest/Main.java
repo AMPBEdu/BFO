@@ -40,7 +40,7 @@ public class Main {
 		RawModel cube = OBJLoader.loadObjModel("sphere", loader);
 		TexturedModel staticModel = new TexturedModel(model, new ModelTexture(loader.loadTexture("green")));
 		TexturedModel dragModel   = new TexturedModel(model, new ModelTexture(loader.loadTexture("red")));
-		TexturedModel cubeTexture = new TexturedModel(cube, new ModelTexture(loader.loadTexture("yellow")));
+		TexturedModel cubeTexture = new TexturedModel(cube,  new ModelTexture(loader.loadTexture("yellow")));
 		ModelTexture texture = staticModel.getTexture();
 		ModelTexture redDrag = dragModel.getTexture();
 		ModelTexture cubeText = cubeTexture.getTexture();
