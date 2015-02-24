@@ -1,9 +1,7 @@
 /engineTest/
-/entities/
 /loaders/
-/models/
 /renderEngine/
-/shaders/
-/terrains/
-/textures/
 /gui/
+/textures/
+/toolBox/
+/BFOMain/

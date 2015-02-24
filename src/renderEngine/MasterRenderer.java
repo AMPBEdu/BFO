@@ -26,11 +26,11 @@ public class MasterRenderer {
 	
 	private Matrix4f projectionMatrix;
 	
-	private StaticShader shader = new StaticShader();
+	private static StaticShader shader = new StaticShader();
 	private EntityRenderer renderer;
 	
 	private TerrainRenderer terrainRenderer;
-	private TerrainShader terrainShader = new TerrainShader();
+	private static TerrainShader terrainShader = new TerrainShader();
 	
 	private Map<TexturedModel, List<Entity>> entities = new HashMap<TexturedModel, List<Entity>>();
 	private List<Terrain> terrains = new ArrayList<Terrain>();
@@ -87,7 +87,7 @@ public class MasterRenderer {
 		GL11.glClearColor(0, 0, 0, 1);
 	}
 	
-	public void cleanUp(){
+	public static void cleanUp(){
 		shader.cleanUp();
 		terrainShader.cleanUp();
 	}

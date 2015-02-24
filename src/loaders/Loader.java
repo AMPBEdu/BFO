@@ -15,6 +15,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
+import org.lwjgl.util.vector.Vector2f;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 
@@ -48,10 +49,10 @@ public class Loader {
 		return textureID;
 	}
 	
-	public Texture loadTextureSheet(String textureName, String fileName){
+	public Texture loadTextureSheet(Vector2f position, Vector2f size, String fileName){
 		Texture texture = null;
 		try {
-			texture = TextureLoader.getTexture("PNG", new FileInputStream("res/Textures/" + fileName + ".png"));
+			texture = TextureLoader.getTexture("PNG", new FileInputStream("res/" + fileName + ".png"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

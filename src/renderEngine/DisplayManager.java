@@ -10,10 +10,18 @@ import org.lwjgl.opengl.PixelFormat;
 import toolBox.Time;
 
 public class DisplayManager {
+	private static String windowTitle = "Battle for Osengaurd!";
+	private static int WIDTH = 1080;
+	private static int HEIGHT = 620;
+	private static int FPS_CAP = 60;
 	
-	private static final int WIDTH = 1080;
-	private static final int HEIGHT = 620;
-	private static final int FPS_CAP = 60;
+	public DisplayManager(String title, int width, int height, int fps){
+		windowTitle = title;
+		WIDTH = width;
+		HEIGHT = height;
+		FPS_CAP = fps;
+		createDisplay();
+	}
 	
 	public static void createDisplay(){
 		
@@ -24,7 +32,7 @@ public class DisplayManager {
 		try {
 		Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
 		Display.create(new PixelFormat(), attribs);
-		Display.setTitle("Engine Tester");
+		Display.setTitle(windowTitle);
 		
 		} catch (LWJGLException e){
 			e.printStackTrace();
@@ -49,5 +57,9 @@ public class DisplayManager {
 	
 	public static int getHeight() {
 		return HEIGHT;
+	}
+
+	public static String getGameTitle() {
+		return windowTitle;
 	}
 }

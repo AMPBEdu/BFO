@@ -6,47 +6,44 @@ import org.lwjgl.util.vector.Vector2f;
 import org.newdawn.slick.opengl.Texture;
 
 import renderEngine.DisplayManager;
+import textures.ButtonTexture;
 import toolBox.Input;
 
 public class Button {
 	Loader loader = new Loader();
-	public Texture normalButton;
-	public Texture hoveredButton;
-	public Texture clickedButton;
-	public Texture disabledButton;
-	public Vector2f mousePos;
-	public Vector2f position;
+	private static Vector2f mousePos;
+	public Vector2f renderPosition;
 	public static Vector2f size;
 	public final int displayHeight = DisplayManager.getHeight();
 	public static boolean disabled = false;
 	public static boolean clicked  = false;
+	public static String fileName;
+	ButtonTexture buttonTexture;
 	
-	public Button(Vector2f position, Vector2f size, Texture[] button){
-		this.position  = position;
-		this.size      = size;
-		normalButton   = button[0];
-		hoveredButton  = button[1];
-		clickedButton  = button[2];
-		disabledButton = button[3];
+	public Button(Vector2f renderPosition){
+		this.renderPosition  = renderPosition;
 	}
 	
 	public void Update(){
 		mousePos = Input.getMousePosition();
 		if(!disabled){
 			if(!mouseOnButton()){
-				renderButton(normalButton);
+				ButtonMode.setMode(ButtonMode.normalMode);
 			}else if(mouseOnButton() && !Input.getMouse(0)){
-				renderButton(hoveredButton);
+				ButtonMode.setMode(ButtonMode.hoverMode);
 			}else{
-				renderButton(clickedButton);
+				ButtonMode.setMode(ButtonMode.clickMode);
 			}
 		}else{
-			renderButton(disabledButton);
+			ButtonMode.setMode(ButtonMode.disabledMode);
 		}
 		if(mouseOnButton() && Input.getMouseUp(0)){
 			clicked = true;
 		}else if(clicked){
 			clicked = false;
+		}
+		if(ButtonMode.hasChanged()){
+			renderButton(buttonTexture.getTexture());
 		}
 	}
 	
@@ -55,10 +52,10 @@ public class Button {
 	}
 	
 	public boolean mouseOnButton(){
-		if(mousePos.x >= position.x &&
-		   mousePos.x <= position.x + size.x &&
-		   mousePos.y >= displayHeight-position.y &&
-		   mousePos.y <= displayHeight-(position.y + size.y)){
+		if(mousePos.x >= renderPosition.x &&
+		   mousePos.x <= renderPosition.x + size.x &&
+		   mousePos.y >= displayHeight-renderPosition.y &&
+		   mousePos.y <= displayHeight-(renderPosition.y + size.y)){
 			return true;
 		}else{
 		return false;

@@ -5,22 +5,32 @@ import org.lwjgl.input.Mouse;
 import entities.Camera;
 
 public class KeyIn {
+	private static boolean finished  = false;
 	private static boolean escMenu   = false;
 	private static boolean sprinting = false;
-	public void updateInput(){
-		menuEvent();
+	public static void updateInput(){
+		if(!finished){
+			menuEvent();
+			closeEvent();
 		if(!escMenu){
 			sprintEvent();
 			moveCamEvent();
+			}
 		}
 	}
-	private void menuEvent(){
+	//Listen Events
+	private static void closeEvent(){
+		if(Input.getKey(Input.KEY_F4) && Input.getKey(Input.KEY_LALT)|| Input.getKey(Input.KEY_RALT)){
+			finished = true;
+		}
+	}
+	private static void menuEvent(){
 		if(Input.getKeyDown(Input.KEY_ESCAPE)){
 			escMenu = !escMenu;
 			Mouse.setGrabbed(!escMenu);
 		}
 	}
-	private void moveCamEvent(){
+	private static void moveCamEvent(){
 		if(Input.getKey(Input.KEY_W)){
 			Camera.moveForward();
 		}
@@ -40,17 +50,26 @@ public class KeyIn {
 			Camera.moveUp();
 		}
 	}
-	private void sprintEvent(){
+	private static void sprintEvent(){
 		if(Input.getKeyDown(Input.KEY_LSHIFT)){
 			sprinting = true;
 		}else if(Input.getKeyUp(Input.KEY_LSHIFT)){
 			sprinting = false;
 		}
 	}
+	
+	//Getters
+	public static boolean isFinished(){
+		return finished;
+	}
 	public static boolean isEscMenu() {
 		return escMenu;
 	}
 	public static boolean isSprinting() {
 		return sprinting;
+	}
+	//Setters
+	public static void setFinished(boolean done){
+		finished = done;
 	}
 }
