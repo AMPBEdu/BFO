@@ -31,9 +31,11 @@ public class Camera {
 		if(!KeyIn.isEscMenu()){
 			dx = Mouse.getDX();
 	        dy = Mouse.getDY();
-	        yaw(dx * mouseSensitivity);
-	        pitch(-dy * mouseSensitivity);
-		}
+	        if(dx!=0)
+	        	yaw(dx * mouseSensitivity);
+	        if(dy!=0)
+	        	pitch(-dy * mouseSensitivity);
+	        }
 		if(KeyIn.isSprinting()){
 			movement = sprintSpeed * Time.getDelta();
 		}else{
@@ -44,7 +46,9 @@ public class Camera {
 	yaw += amount;
 	}
 	public void pitch(float amount){
-	pitch += amount;
+		if(Math.abs(pitch + amount) <= 90){
+			pitch += amount;
+		}
 	}
 	//Movement
 	public static void moveForward()

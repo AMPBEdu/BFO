@@ -1,7 +1,9 @@
 package toolBox;
 
 import org.lwjgl.input.Mouse;
+import org.lwjgl.util.vector.Vector2f;
 
+import renderEngine.DisplayManager;
 import entities.Camera;
 
 public class KeyIn {
@@ -25,9 +27,14 @@ public class KeyIn {
 		}
 	}
 	private static void menuEvent(){
+		if(Input.getMouseDown(0)){
+			escMenu = false;
+			Mouse.setGrabbed(true);
+		}
 		if(Input.getKeyDown(Input.KEY_ESCAPE)){
 			escMenu = !escMenu;
 			Mouse.setGrabbed(!escMenu);
+			Input.setMousePosition(new Vector2f(DisplayManager.getWidth()/2, DisplayManager.getHeight()/2));
 		}
 	}
 	private static void moveCamEvent(){

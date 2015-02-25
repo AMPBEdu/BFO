@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:32a6864f9b33c05776eb7d3873ff7fa9:5c387d4e6eba51464efcf59ff992f339:c4bb1ca54c4cebd6480250622ac07276$ -->
+<!--Format:
+n  => name of the sprite
+x  => sprite x pos in texture
+y  => sprite y pos in texture
+w  => sprite width (may be trimmed)
+h  => sprite height (may be trimmed)
+pX => x pos of the pivot point (relative to sprite width)
+pY => y pos of the pivot point (relative to sprite height)
+oX => sprite's x-corner offset (only available if trimmed)
+oY => sprite's y-corner offset (only available if trimmed)
+oW => sprite's original width (only available if trimmed)
+oH => sprite's original height (only available if trimmed)
+r => 'y' only set if sprite is rotated
+-->
+<TextureAtlas imagePath="allTextures.png" width="1802" height="1034">
+    <sprite n="blendMapTest.png" x="2" y="2" w="1024" h="1024" pX="0.5" pY="0.5"/>
+    <sprite n="goldTexture.png" x="1542" y="2" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="grassFlowers.png" x="1542" y="260" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="grassTexture.png" x="1028" y="516" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="gray.png" x="1028" y="774" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="green.png" x="1286" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="mud.png" x="1286" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="path.png" x="1028" y="2" w="512" h="512" pX="0.5" pY="0.5"/>
+    <sprite n="red.png" x="1544" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="yellow.png" x="1544" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
+</TextureAtlas>

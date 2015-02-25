@@ -87,7 +87,7 @@ public class MasterRenderer {
 		GL11.glClearColor(0, 0, 0, 1);
 	}
 	
-	public static void cleanUp(){
+	public void cleanUp(){
 		shader.cleanUp();
 		terrainShader.cleanUp();
 	}
