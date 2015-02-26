@@ -2,12 +2,13 @@ package BFOMain;
 
 import loaders.Loader;
 import loaders.OBJLoader;
+import loaders.SpriteLoader;
 import models.RawModel;
 import models.TexturedModel;
 import entities.Camera;
 import entities.Entity;
 import entities.Light;
-import gui.ButtonMode;
+import guiComponents.ButtonMode;
 
 import org.lwjgl.Sys;
 import org.lwjgl.input.Keyboard;
@@ -57,6 +58,8 @@ public class Main {
 	private static Entity redDragon   = new Entity(redDragModel, new Vector3f(108,0,-170),0,70,0,1.5f);	
 	private static Entity sphereEntity = new Entity(sphereModel, light.getPosition(),0,0,0,0.75f);
 	//End of Entities
+	private static int frames = 0;
+	private static double frameCounter = 0;
 	
 	public static void main(String[] args) {
 		try {
@@ -66,7 +69,7 @@ public class Main {
 				e.printStackTrace(System.err);
 				Sys.alert(DisplayManager.getGameTitle(), "An error occured and the game will exit.");
 				} finally {
-					cleanup();
+					cleanUp();
 					}
 		}
       
@@ -79,6 +82,7 @@ public class Main {
        * Runs the game (the "main loop")
        */
 	private static void run() {
+		
 		while (!KeyIn.isFinished()) {
 			startFrameUpdate();
 			if (Display.isCloseRequested()) {
@@ -101,17 +105,26 @@ public class Main {
 			}
 		}
 	
-	private static void cleanup() {
+	private static void cleanUp() {
 		// TODO: save anything you want to disk here
 		AL.destroy();
 		renderer.cleanUp();
 		loader.cleanUp();
+		SpriteLoader.cleanUp();
 		DisplayManager.closeDisplay();
 		}
 	
 	private static void logic() {
 		KeyIn.updateInput();
 		camera.updatePosition();
+		
+		frameCounter += Time.getDelta();
+		frames++;
+		if(frameCounter >= 1.0){
+			System.out.println(frames);
+			frames = 0;
+			frameCounter = 0;
+			}
 		}
 	
 	private static void render() {

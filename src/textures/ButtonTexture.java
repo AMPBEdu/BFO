@@ -1,6 +1,6 @@
 package textures;
 
-import gui.ButtonMode;
+import guiComponents.ButtonMode;
 
 import java.util.ArrayList;
 import java.util.List;

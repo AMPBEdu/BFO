@@ -1,4 +1,4 @@
-package gui;
+package guiComponents;
 
 import loaders.Loader;
 
