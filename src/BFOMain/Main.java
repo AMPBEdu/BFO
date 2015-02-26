@@ -110,7 +110,7 @@ public class Main {
 		AL.destroy();
 		renderer.cleanUp();
 		loader.cleanUp();
-		SpriteLoader.cleanUp();
+		SpriteLoader.cleanUp(false);
 		DisplayManager.closeDisplay();
 		}
 	
@@ -136,6 +136,7 @@ public class Main {
 		renderer.processEntity(redDragon);
 		renderer.processEntity(sphereEntity);
 		renderer.render(light, camera);
+		SpriteLoader sprite = new SpriteLoader("", "");
 		}
 	
 	private static void startFrameUpdate(){
