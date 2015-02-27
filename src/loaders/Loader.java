@@ -49,18 +49,6 @@ public class Loader {
 		return textureID;
 	}
 	
-	public Texture loadTextureSheet(Vector2f position, Vector2f size, String fileName){
-		Texture texture = null;
-		try {
-			texture = TextureLoader.getTexture("PNG", new FileInputStream("res/" + fileName + ".png"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return texture;
-	}
-	
 	public void cleanUp(){
 		for(int vao:vaos){
 			GL30.glDeleteVertexArrays(vao);

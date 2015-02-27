@@ -16,14 +16,14 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="allTextures.png" width="1802" height="1034">
-    <sprite n="blendMapTest.png" x="2" y="2" w="1024" h="1024" pX="0.5" pY="0.5"/>
-    <sprite n="goldTexture.png" x="1542" y="2" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="grassFlowers.png" x="1542" y="260" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="grassTexture.png" x="1028" y="516" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="gray.png" x="1028" y="774" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="green.png" x="1286" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="mud.png" x="1286" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="path.png" x="1028" y="2" w="512" h="512" pX="0.5" pY="0.5"/>
-    <sprite n="red.png" x="1544" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
-    <sprite n="yellow.png" x="1544" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="blendMap" x="2" y="2" w="1024" h="1024" pX="0.5" pY="0.5"/>
+    <sprite n="gold" x="1542" y="2" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="grassFlowers" x="1542" y="260" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="grass" x="1028" y="516" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="gray" x="1028" y="774" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="green" x="1286" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="dirt" x="1286" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="path" x="1028" y="2" w="512" h="512" pX="0.5" pY="0.5"/>
+    <sprite n="red" x="1544" y="518" w="256" h="256" pX="0.5" pY="0.5"/>
+    <sprite n="yellow" x="1544" y="776" w="256" h="256" pX="0.5" pY="0.5"/>
 </TextureAtlas>

@@ -7,8 +7,6 @@ import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.PixelFormat;
 
-import toolBox.Time;
-
 public class DisplayManager {
 	private static String windowTitle = "Battle for Osengaurd!";
 	private static int WIDTH = 1080;
@@ -47,7 +45,7 @@ public class DisplayManager {
 		Display.update();
 	}
 	
-	public static void closeDisplay(){
+	public void closeDisplay(){
 		Display.destroy();
 	}
 

@@ -3,19 +3,14 @@ package BFOMain;
 import loaders.Loader;
 import loaders.OBJLoader;
 import loaders.SpriteLoader;
+import loaders.SpriteSheet;
 import models.RawModel;
 import models.TexturedModel;
-import entities.Camera;
-import entities.Entity;
-import entities.Light;
-import guiComponents.ButtonMode;
 
 import org.lwjgl.Sys;
-import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.openal.AL;
 import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector3f;
 
 import renderEngine.DisplayManager;
@@ -27,10 +22,16 @@ import textures.TerrainTexturePack;
 import toolBox.Input;
 import toolBox.KeyIn;
 import toolBox.Time;
+import entities.Camera;
+import entities.Entity;
+import entities.Light;
+import guiComponents.ButtonMode;
 
 public class Main {
 	private static DisplayManager gameDisplay = new DisplayManager("Battle for Osengaurd", 1080, 620, 60);
 	private static Loader loader = new Loader();
+	private static final SpriteSheet textures = new SpriteSheet("res/Textures/allTextures.png", "res/Textures/textures.xml");
+	private static SpriteLoader textureLoader = new SpriteLoader(textures);
 	public static MasterRenderer renderer = new MasterRenderer();
 	//Terrain
 	private static TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassTexture"));
@@ -111,7 +112,7 @@ public class Main {
 		renderer.cleanUp();
 		loader.cleanUp();
 		SpriteLoader.cleanUp(false);
-		DisplayManager.closeDisplay();
+		gameDisplay.closeDisplay();
 		}
 	
 	private static void logic() {
@@ -136,7 +137,6 @@ public class Main {
 		renderer.processEntity(redDragon);
 		renderer.processEntity(sphereEntity);
 		renderer.render(light, camera);
-		SpriteLoader sprite = new SpriteLoader("", "");
 		}
 	
 	private static void startFrameUpdate(){

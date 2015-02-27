@@ -1,18 +1,30 @@
 package loaders;
 
-final class Sprite {
+import org.lwjgl.util.vector.Vector2f;
+
+public final class Sprite {
 	private final String name;
+	private final int spriteSheet;
 	private final int x;
 	private final int y;
 	private final int w;
 	private final int h;
-	public Sprite(String name, int x, int y, int w, int h) {
+	private final Vector2f size;
+
+	public Sprite(String name, int spriteSheet, int x, int y, int w, int h) {
 		this.name = name;
+		this.spriteSheet = spriteSheet;
 		this.x = x;
 		this.y = y;
 		this.w = w;
 		this.h = h;
+		size = new Vector2f(getWidth(), getHeight());
 	}
+
+	public void render() {
+		// render code
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -67,5 +79,8 @@ final class Sprite {
 	}
 	public int getHeight() {
 		return h;
+	}
+	public Vector2f getSize() {
+		return size;
 	}
 }

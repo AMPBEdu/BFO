@@ -2,7 +2,6 @@ package terrains;
 
 import loaders.Loader;
 import models.RawModel;
-import textures.ModelTexture;
 import textures.TerrainTexture;
 import textures.TerrainTexturePack;
 

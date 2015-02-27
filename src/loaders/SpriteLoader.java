@@ -4,6 +4,7 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import org.lwjgl.util.vector.Vector3f;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,9 +24,9 @@ public class SpriteLoader {
 	private static String SPRITESHEET_IMAGE_LOCATION;
 	private static String SPRITESHEET_XML_LOCATION;
 
-	public SpriteLoader(String imgLocation, String xmlLocation) {
-		SPRITESHEET_IMAGE_LOCATION = imgLocation;
-		SPRITESHEET_XML_LOCATION = xmlLocation;
+	public SpriteLoader(SpriteSheet sheet) {
+		SPRITESHEET_IMAGE_LOCATION = sheet.getSheetLocation();
+		SPRITESHEET_XML_LOCATION = sheet.getXmlLocation();
 		setUpSpriteSheets();
 		spriteSheetMap.put(SPRITESHEET_IMAGE_LOCATION, spriteSheet);
 	}
@@ -44,7 +45,7 @@ public class SpriteLoader {
 				int y = spriteElement.getAttribute("y").getIntValue();
 				int w = spriteElement.getAttribute("w").getIntValue();
 				int h = spriteElement.getAttribute("h").getIntValue();
-				Sprite sprite = new Sprite(name, x, y, w, h);
+				Sprite sprite = new Sprite(name, spriteSheet, x, y, w, h);
 				spriteMap.put(sprite.getName(), sprite);
 			}
 		} catch (JDOMException e) {
@@ -54,6 +55,10 @@ public class SpriteLoader {
 			e.printStackTrace();
 			cleanUp(true);
 		}
+	}
+	
+	public void render(Sprite sprite, Vector3f pos){
+		
 	}
 	
 	public static void cleanUp(boolean asCrash) {
@@ -71,4 +76,9 @@ public class SpriteLoader {
 	public Sprite getSprite(String spriteName){
 		return spriteMap.get(spriteName);
 	}
+
+	public static String getSpriteSheetLocation() {
+		return SPRITESHEET_IMAGE_LOCATION;
+	}
+	
 }

@@ -16,52 +16,52 @@ oH => sprite's original height (only available if trimmed)
 r => 'y' only set if sprite is rotated
 -->
 <TextureAtlas imagePath="GUIButtons.png" width="256" height="512">
-    <sprite n="checkBoxDisabledSelected.png" x="2" y="481" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30"/>
-    <sprite n="checkBoxDisabledUnselected.png" x="226" y="289" w="28" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
-    <sprite n="checkBoxHoveredSelected.png" x="2" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="checkBoxHoveredUnselected.png" x="2" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="checkBoxNormalSelected.png" x="130" y="444" w="29" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
-    <sprite n="checkBoxNormalUnselected.png" x="130" y="476" w="26" h="27" pX="0.5" pY="0.5" oX="2" oY="1" oW="30" oH="30"/>
-    <sprite n="menuButtonClicked.png" x="2" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
-    <sprite n="menuButtonDisabled.png" x="64" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
-    <sprite n="menuButtonHovered.png" x="126" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
-    <sprite n="menuButtonNormal.png" x="188" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
-    <sprite n="radioDisabledSelected.png" x="2" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="radioDisabledUnselected.png" x="226" y="348" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
-    <sprite n="radioHoveredSelected.png" x="226" y="380" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
-    <sprite n="radioHoveredUnselected.png" x="226" y="320" w="28" h="26" pX="0.5" pY="0.5" oX="1" oY="2" oW="30" oH="30"/>
-    <sprite n="radioNormalSelected.png" x="2" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="radioNormalUnselected.png" x="2" y="417" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideLeftClicked.png" x="2" y="449" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideLeftDisabled.png" x="34" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideLeftHovered.png" x="66" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideLeftNormal.png" x="98" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideMinusClicked.png" x="130" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideMinusDisabled.png" x="162" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideMinusHovered.png" x="194" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideMinusNormal.png" x="34" y="348" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sidePlusClicked.png" x="34" y="380" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sidePlusDisabled.png" x="34" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sidePlusHovered.png" x="34" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sidePlusNormal.png" x="34" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideRightClicked.png" x="66" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideRightDisabled.png" x="98" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideRightHovered.png" x="130" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="sideRightNormal.png" x="162" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertDownClicked.png" x="194" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertDownDisabled.png" x="66" y="380" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertDownHovered.png" x="66" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertDownNormal.png" x="226" y="412" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
-    <sprite n="vertMinusClicked.png" x="66" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertMinusDisabled.png" x="66" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertMinusHovered.png" x="98" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertMinusNormal.png" x="130" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertPlusClicked.png" x="162" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertPlusDisabled.png" x="194" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertPlusHovered.png" x="98" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertPlusNormal.png" x="98" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertUpClicked.png" x="98" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertUpDisabled.png" x="130" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertUpHovered.png" x="162" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
-    <sprite n="vertUpNormal.png" x="194" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="checkBoxSelectedDisabled" x="2" y="481" w="30" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30"/>
+    <sprite n="checkBoxUnselectedDisabled" x="226" y="289" w="28" h="29" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="checkBoxSelectedHovered" x="2" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="checkBoxUnselectedHovered" x="2" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="checkBoxSelectedNormal" x="130" y="444" w="29" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="checkBoxUnselectedNormal" x="130" y="476" w="26" h="27" pX="0.5" pY="0.5" oX="2" oY="1" oW="30" oH="30"/>
+    <sprite n="textClicked" x="2" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="textDisabled" x="64" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="textHovered" x="126" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="textNormal" x="188" y="2" w="60" h="285" pX="0.5" pY="0.5" r="y"/>
+    <sprite n="radioSelectedDisabled" x="2" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="radioUnselectedDisabled" x="226" y="348" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="radioSelectedHovered" x="226" y="380" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="radioUnselectedHovered" x="226" y="320" w="28" h="26" pX="0.5" pY="0.5" oX="1" oY="2" oW="30" oH="30"/>
+    <sprite n="radioSelectedNormal" x="2" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="radioUnselectedNormal" x="2" y="417" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideLeftClicked" x="2" y="449" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideLeftDisabled" x="34" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideLeftHovered" x="66" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideLeftNormal" x="98" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideMinusClicked" x="130" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideMinusDisabled" x="162" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideMinusHovered" x="194" y="289" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideMinusNormal" x="34" y="348" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sidePlusClicked" x="34" y="380" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sidePlusDisabled" x="34" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sidePlusHovered" x="34" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sidePlusNormal" x="34" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideRightClicked" x="66" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideRightDisabled" x="98" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideRightHovered" x="130" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="sideRightNormal" x="162" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertDownClicked" x="194" y="321" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertDownDisabled" x="66" y="380" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertDownHovered" x="66" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertDownNormal" x="226" y="412" w="27" h="30" pX="0.5" pY="0.5" oX="0" oY="1" oW="30" oH="30" r="y"/>
+    <sprite n="vertMinusClicked" x="66" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertMinusDisabled" x="66" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertMinusHovered" x="98" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertMinusNormal" x="130" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertPlusClicked" x="162" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertPlusDisabled" x="194" y="353" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertPlusHovered" x="98" y="412" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertPlusNormal" x="98" y="444" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertUpClicked" x="98" y="476" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertUpDisabled" x="130" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertUpHovered" x="162" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
+    <sprite n="vertUpNormal" x="194" y="385" w="30" h="30" pX="0.5" pY="0.5"/>
 </TextureAtlas>
