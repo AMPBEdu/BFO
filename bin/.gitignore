@@ -1,6 +1,11 @@
-/loaders/
-/guiComponents/
 /BFOMain/
-/textures/
+/entities/
+/gui/
+/guiComponents/
+/loaders/
+/models/
 /renderEngine/
+/shaders/
 /terrains/
+/textures/
+/skyBox/

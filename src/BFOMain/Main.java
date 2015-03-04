@@ -30,13 +30,13 @@ import guiComponents.ButtonMode;
 public class Main {
 	private static DisplayManager gameDisplay = new DisplayManager("Battle for Osengaurd", 1080, 620, 60);
 	private static Loader loader = new Loader();
-	private static final SpriteSheet textures = new SpriteSheet("res/Textures/allTextures.png", "res/Textures/textures.xml");
+	private static final SpriteSheet textures = new SpriteSheet("allTextures", "res/Textures/textures.xml");
 	private static SpriteLoader textureLoader = new SpriteLoader(textures);
-	public static MasterRenderer renderer = new MasterRenderer();
+	public static MasterRenderer renderer = new MasterRenderer(loader);
 	//Terrain
-	private static TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassTexture"));
+	private static TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("lava"));
 	private static TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
-	private static TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("pinkFlowers"));
+	private static TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("lava"));
 	private static TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("path"));
 	private static TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture, gTexture, bTexture);
 	private static TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));
