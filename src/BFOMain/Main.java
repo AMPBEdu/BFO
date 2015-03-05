@@ -34,9 +34,9 @@ public class Main {
 	private static SpriteLoader textureLoader = new SpriteLoader(textures);
 	public static MasterRenderer renderer = new MasterRenderer(loader);
 	//Terrain
-	private static TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("lava"));
+	private static TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassTexture"));
 	private static TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
-	private static TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("lava"));
+	private static TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("pinkFlowers"));
 	private static TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("path"));
 	private static TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture, gTexture, bTexture);
 	private static TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));

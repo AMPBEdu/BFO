@@ -59,7 +59,7 @@ public class SkyBoxRenderer {
 	     SIZE, -SIZE,  SIZE
 	};
 	
-	private static String[] TEXTURE_FILES = {"hellLeft", "hellRight", "hellTop", "hellBottom", "hellBack", "hellFront"};
+	private static String[] TEXTURE_FILES = {"clouds/left", "clouds/right", "clouds/top", "clouds/bottom", "clouds/back", "clouds/front"};
 	
 	private RawModel cube;
 	private int texture;
