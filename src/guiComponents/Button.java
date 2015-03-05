@@ -11,7 +11,7 @@ import toolBox.Input;
 
 public class Button {
 	Loader loader = new Loader();
-	SpriteSheet buttonSheet = new SpriteSheet("res/GUITextures/GUIButtons.png","res/GUITextures/GUIButtons.xml");
+	SpriteSheet buttonSheet = new SpriteSheet("GUITextures/GUIButtons","res/GUITextures/GUIButtons.xml");
 	SpriteLoader buttons = new SpriteLoader(buttonSheet);
 	Sprite buttonSprite;
 	ButtonMode mode = new ButtonMode();
@@ -56,7 +56,7 @@ public class Button {
 	}
 
 	private void renderButton(Sprite button) {
-		button.render();
+		
 	}
 
 	public boolean mouseOnButton() {
@@ -71,5 +71,9 @@ public class Button {
 	}
 	public boolean getClicked() {
 		return clicked;
+	}
+	
+	public Sprite getSprite(){
+		return buttons.getSprite(buttonName + mode.getMode());
 	}
 }

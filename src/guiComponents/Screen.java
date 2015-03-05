@@ -1,4 +1,4 @@
-package gui;
+package guiComponents;
 
 public class Screen {
 
