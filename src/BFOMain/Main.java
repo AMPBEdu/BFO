@@ -37,7 +37,7 @@ import guiComponents.TextButton;
 
 public class Main {
 	private static DisplayManager gameDisplay = new DisplayManager(
-			"Battle for Osengaurd", 1900, 920, 60);
+			"Battle for Osengaurd", 1080, 720, 60);
 	private static Loader loader = new Loader();
 	private static final SpriteSheet textures = new SpriteSheet(
 			"Textures/allTextures", "res/Textures/textures.xml");
@@ -91,6 +91,7 @@ public class Main {
 	static float displayWidth = DisplayManager.getWidth();
 	static float displayHeight = DisplayManager.getHeight();
 	private static GuiTexture gui = new GuiTexture(loader.loadTexture("GUITextures/Buttons/menuButtonNormal"), new Vector2f(spriteHeight/displayWidth, 0f), new Vector2f(spriteHeight/displayWidth * 2, spriteWidth/displayHeight));
+	private static GuiTexture dimscreen = new GuiTexture(loader.loadTexture("Textures/darkGray"), new Vector2f(0,0), new Vector2f(1,1));
 	
 	private static GuiRenderer guiRenderer = new GuiRenderer(loader);
 	//End of GUI
@@ -178,6 +179,7 @@ public class Main {
 		renderer.processEntity(redDragon);
 		renderer.processEntity(sphereEntity);
 		renderer.render(light, camera);
+		guiRenderer.render(dimscreen);
 		guiRenderer.render(guis);
 	}
 
