@@ -1,7 +1,12 @@
-/guiComponents/
-/skyBox/
 /BFOMain/
+/entities/
 /gui/
-/toolBox/
-/renderEngine/
+/guiComponents/
 /loaders/
+/models/
+/renderEngine/
+/shaders/
+/skyBox/
+/terrains/
+/textures/
+/toolBox/

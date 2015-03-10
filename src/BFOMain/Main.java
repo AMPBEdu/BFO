@@ -179,9 +179,11 @@ public class Main {
 		renderer.processEntity(redDragon);
 		renderer.processEntity(sphereEntity);
 		renderer.render(light, camera);
-		guiRenderer.render(dimscreen);
-		guiRenderer.render(guis);
-	}
+		if(KeyIn.isEscMenu()){
+			guiRenderer.render(dimscreen, 0.75f);
+			guiRenderer.render(guis);
+			}
+		}
 
 	private static void startFrameUpdate() {
 		Time.Update();

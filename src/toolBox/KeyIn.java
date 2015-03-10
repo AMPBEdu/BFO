@@ -27,10 +27,6 @@ public class KeyIn {
 		}
 	}
 	private static void menuEvent(){
-		if(Input.getMouseDown(0)){
-			escMenu = false;
-			Mouse.setGrabbed(true);
-		}
 		if(Input.getKeyDown(Input.KEY_ESCAPE)){
 			escMenu = !escMenu;
 			Mouse.setGrabbed(!escMenu);
